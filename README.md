@@ -24,7 +24,7 @@ local exampleObservable = Observable(function (next, err, complete, closed)
 end)
 ```
 Subscribing to an Observable
-```
+```lua
 local source = Observable(function (next, err, complete, closed)
     for i = 1, 10 do 
         next(i)
