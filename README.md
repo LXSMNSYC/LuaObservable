@@ -137,3 +137,6 @@ Other functions implemented:
   * ```observable:min()``` emits the smallest.
   * ```observable:sum()``` emits the total of the values.
   * ```observable:reduce(reductor)``` emits a single value on completion based on the accumulated values.
+  
+## Author Notes
+I will implement some other functions such as Window and Select, might as well support timed Observables. I will also update all functions to handle closed subscriptions.
