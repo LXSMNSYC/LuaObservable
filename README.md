@@ -151,8 +151,9 @@ Other functions implemented:
   
 ## Changelogs
 1.1
-    * Observables are now infinite-safe, i.e. using :take(n) on an infinite sequence of emissions.
-    * Added ```concat`` operator.
-    * Added some custom operators: ```linear```, ```exponential```, ```sieve```, ```fibonacci``` and ```generator```.
+  * Observables are now infinite-safe, i.e. using :take(n) on an infinite sequence of emissions.
+  * Added ```concat`` operator.
+  * Added some custom operators: ```linear```, ```exponential```, ```sieve```, ```fibonacci``` and ```generator```.
+  
 1.0
-    * Release
+  * Release
