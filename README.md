@@ -5,7 +5,7 @@ http://reactivex.io/documentation/observable.html
 ## Usage
 Loading the module
 ```lua
-local Observable = require "observable"
+local Observable = require "LuaObservable"
 ```
 
 Defining an Observable instance
@@ -49,6 +49,11 @@ outputs:
 8
 9
 10
+```
+
+To use the Observable operators:
+```lua
+    Observable.loadExtensions();
 ```
 
 Turn a table into an Observable
@@ -110,6 +115,7 @@ Other functions implemented:
   * ```observable:takeWhile(criteria)``` emits until an emission fails the criteria.
   * ```observable:takeLastBuffer(amount)``` emits the last amount of emissions as a buffer.
   * ```observable:combineLatest(otherObservable, combinator)``` combines any recent emissions from both Observables then emits it.
+  * ```observable:concat(...)``` concats Observables.
   * ```observable:withLatestFrom(otherObservable, combinator)``` combines any recent emissions from both Observables then emits it every time the source emits.
   * ```observable:merge(...)``` merges the source Observable with other observables.
   * ```observable:startWith(...)``` similar to ```Observable.of``` except that the source Observable emits after the sequence from the arguments have been emitted.
@@ -137,6 +143,16 @@ Other functions implemented:
   * ```observable:min()``` emits the smallest.
   * ```observable:sum()``` emits the total of the values.
   * ```observable:reduce(reductor)``` emits a single value on completion based on the accumulated values.
+  * ```Observable.linear(start, step)``` emits an infinite sequence of numbers based on a linear growth (start + step*n).
+  * ```Observable.exponential(start, step)``` emits an infinite sequence of numbers based on an exponential growth (start*step*n).
+  * ```Observable.sieve(level)``` emits an infinite sequence of primes. Level defines the the number of cycles of primality.
+  * ```Observable.fibonacci()``` emits an infinite sequence of fibonacci numbers.
+  * ```Observable.generator(handler, start, step)``` emits an infinite sequence of values produced by the handler.
   
-## Author Notes
-I will implement some other functions such as Window and Select, might as well support timed Observables. I will also update all functions to handle closed subscriptions.
+## Changelogs
+1.1
+    * Observables are now infinite-safe, i.e. using :take(n) on an infinite sequence of emissions.
+    * Added ```concat`` operator.
+    * Added some custom operators: ```linear```, ```exponential```, ```sieve```, ```fibonacci``` and ```generator```.
+1.0
+    * Release
